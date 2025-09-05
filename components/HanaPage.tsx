@@ -1,6 +1,9 @@
 
 
 
+
+
+
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import HanaAvatar, { HanaState } from './HanaAvatar';
 import { createHanaChat, sendMessageToHana } from '../services/geminiService';
@@ -167,7 +170,6 @@ const HanaPage: React.FC = () => {
             timestamp: new Date(msg.id).toISOString()
         }))
     };
-    // FIX: The JSON.stringify method was called with multiple arguments, which is not supported by the linter configuration. The extra arguments for formatting have been removed.
     const logMessage = `Saving to AI Halal Advisor Database (Simulation): ${JSON.stringify(chatLogForDb)}`;
     console.log(logMessage);
 

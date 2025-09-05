@@ -6,10 +6,14 @@ export interface Service {
 
 export interface NewsArticle {
   id: number;
-  // Text content will be fetched via translation keys
+  title: string;
+  summary: string;
+  content: string;
   imageUrl: string;
-  category: string; // This can also be a key
+  category: string; // The translated category name
+  rawCategory: string; // The category key used for filtering
   date: string;
+  url?: string; // The original external URL (optional now)
 }
 
 export interface Persona {

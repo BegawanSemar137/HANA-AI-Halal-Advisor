@@ -3,7 +3,8 @@ import React, { createContext, useState, useEffect, useCallback } from 'react';
 interface LanguageContextType {
   language: string;
   setLanguage: (language: string) => void;
-  t: (key: string) => string;
+  // FIX: Update t function signature to accept replacements.
+  t: (key: string, replacements?: { [key: string]: string | number }) => string;
 }
 
 export const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -38,10 +39,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
   }, [language]);
 
-  const t = useCallback((key: string): string => {
+  // FIX: Update t function to handle placeholder replacements.
+  const t = useCallback((key: string, replacements?: { [key: string]: string | number }): string => {
     if (!translations) return key;
     const keys = key.split('.');
-    let result = translations;
+    let result: any = translations;
     for (const k of keys) {
       if (result && typeof result === 'object' && k in result) {
         result = result[k];
@@ -49,7 +51,18 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         return key; // Return the key if not found
       }
     }
-    return typeof result === 'string' ? result : key;
+    
+    if (typeof result === 'string') {
+      if (replacements) {
+        return Object.keys(replacements).reduce((acc, placeholder) => {
+          const value = replacements[placeholder];
+          return acc.replace(new RegExp(`{${placeholder}}`, 'g'), String(value));
+        }, result);
+      }
+      return result;
+    }
+
+    return key;
   }, [translations]);
 
   return (

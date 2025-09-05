@@ -28,6 +28,8 @@ import BasketModal from './components/BasketModal';
 import ProductDetailPage from './components/ProductDetailPage';
 import { useProducts } from './hooks/useProducts';
 import RegulationPage from './components/RegulationPage';
+import NewsDetailPage from './components/NewsDetailPage';
+import { useNews } from './hooks/useNews';
 
 
 const App: React.FC = () => {
@@ -35,9 +37,11 @@ const App: React.FC = () => {
   const [isBasketOpen, setIsBasketOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState('home');
   const [selectedProductId, setSelectedProductId] = useState<number | null>(null);
+  const [selectedNewsId, setSelectedNewsId] = useState<number | null>(null);
   const { persona, isAuthenticated, selectPersona, logout } = useAuth();
   const { t } = useTranslations();
   const { products } = useProducts();
+  const { news } = useNews();
   
   const handleLogout = () => {
     logout();
@@ -51,6 +55,7 @@ const App: React.FC = () => {
     }
     window.scrollTo(0, 0);
     setSelectedProductId(null); // Clear selected product when navigating to a new page
+    setSelectedNewsId(null);
     setCurrentPage(page);
   };
   
@@ -60,10 +65,21 @@ const App: React.FC = () => {
     window.scrollTo(0, 0);
   };
 
+  const handleNewsSelect = (id: number) => {
+    setSelectedNewsId(id);
+    setCurrentPage('news-detail');
+    window.scrollTo(0, 0);
+  };
+
   const handleBackToMarketplace = () => {
     setSelectedProductId(null);
     setCurrentPage('marketplace');
     window.scrollTo(0, 0);
+  };
+  
+  const handleBackToNews = () => {
+    setSelectedNewsId(null);
+    navigateTo('news');
   };
 
   const handleGlobalSearch = (scope: 'products' | 'certificates') => {
@@ -104,6 +120,7 @@ const App: React.FC = () => {
     'marketplace',
     'product-detail',
     'news',
+    'news-detail',
     'promotions',
     'profile',
     'supplier-verification',
@@ -124,7 +141,7 @@ const App: React.FC = () => {
             <MainCarousel />
             <ServicesMenu onNavigate={navigateTo} />
             <Promotions />
-            <NewsFeed />
+            <NewsFeed onNewsSelect={handleNewsSelect}/>
           </>
         );
       case 'hana':
@@ -141,7 +158,12 @@ const App: React.FC = () => {
           ? <ProductDetailPage product={selectedProduct} onBack={handleBackToMarketplace} /> 
           : <MarketplacePage onProductSelect={handleProductSelect} />; // Fallback
        case 'news':
-        return <NewsPage />;
+        return <NewsPage onNewsSelect={handleNewsSelect} />;
+      case 'news-detail':
+        const selectedNews = news.find(n => n.id === selectedNewsId);
+        return selectedNews 
+          ? <NewsDetailPage article={selectedNews} onBack={handleBackToNews} /> 
+          : <NewsPage onNewsSelect={handleNewsSelect} />; // Fallback
       case 'promotions':
         return <PromotionsPage />;
       case 'profile':
@@ -160,7 +182,7 @@ const App: React.FC = () => {
                 <Hero />
                 <MainCarousel />
                 <ServicesMenu onNavigate={navigateTo} />
-                <NewsFeed />
+                <NewsFeed onNewsSelect={handleNewsSelect} />
             </>
         );
     }

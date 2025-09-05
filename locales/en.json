@@ -1,13 +1,19 @@
 {
   "header": {
     "searchPlaceholder": "Search for halal products, services...",
-    "searchLabel": "Search"
+    "searchLabel": "Search",
+    "profileMenu": {
+      "viewProfile": "View Profile",
+      "switchPersona": "Switch Persona",
+      "loginRegister": "Login / Register"
+    }
   },
   "nav": {
     "home": "Home",
     "promotions": "Promotions",
     "news": "News",
-    "profile": "Profile"
+    "profile": "Profile",
+    "regulation": "Regulation"
   },
   "home": {
     "hero": {
@@ -80,6 +86,7 @@
     "news": {
       "title": "BPJPH News & Updates",
       "loadMore": "Load More",
+      "clearFilter": "Clear Filter",
       "categories": {
         "all": "All",
         "technology": "Technology",
@@ -88,10 +95,10 @@
         "government": "Government"
       },
       "articles": {
-        "1": { "title": "BPJPH & Ministry of Cooperatives Collaborate for MSME Halal Certification", "summary": "A new collaboration aims to accelerate halal certification for millions of MSME products, strengthening Indonesia's halal ecosystem.", "category": "Government", "date": "Oct 10, 2024", "url": "https://bpjph.halal.go.id/news/bpjph-kemenkop-ukm-kolaborasi-akselerasi-sertifikasi-halal-umk" },
-        "2": { "title": "Head of BPJPH Outlines 3 Priorities for Global Halal Ecosystem", "summary": "The Head of BPJPH highlighted mutual recognition, digital integration, and capacity building as key priorities for a global halal standard.", "category": "Government", "date": "Oct 09, 2024", "url": "https://bpjph.halal.go.id/news/kepala-bpjph-paparkan-3-isu-prioritas-wujudkan-ekosistem-halal-dunia" },
-        "3": { "title": "Mandatory Halal Certification is a Legal Mandate, Says BPJPH Head", "summary": "The Head of BPJPH reaffirms that the upcoming mandatory halal certification is a direct implementation of the law to protect consumers.", "category": "Education", "date": "Oct 08, 2024", "url": "https://bpjph.halal.go.id/news/tegas-kepala-bpjph-kewajiban-sertifikasi-halal-adalah-perintah-undang-undang" },
-        "4": { "title": "BPJPH Offers On-the-Spot Certification at Halal World 2024", "summary": "To speed up compliance, BPJPH provided on-the-spot halal certification registration and consultation services during the Halal World 2024 event.", "category": "Event", "date": "Oct 07, 2024", "url": "https://bpjph.halal.go.id/news/bpjph-buka-layanan-sertifikasi-halal-on-the-spot-di-halal-world-2024" }
+        "1": { "title": "BPJPH & Ministry of Cooperatives Collaborate for MSME Halal Certification", "summary": "A new collaboration aims to accelerate halal certification for millions of MSME products, strengthening Indonesia's halal ecosystem.", "content": "The Halal Product Assurance Organizing Body (BPJPH) and the Ministry of Cooperatives and Small and Medium Enterprises (Kemenkop UKM) have signed a memorandum of understanding to accelerate halal certification for MSMEs. This strategic partnership aims to integrate data and provide streamlined support, making it easier for millions of small businesses to comply with the upcoming mandatory halal regulations. The collaboration will focus on joint socialization, training, and providing access to financing to reduce the barriers to certification.\n\nHead of BPJPH, Muhammad Aqil Irham, stated, 'This synergy is crucial for building a strong national halal ecosystem. By working together, we can ensure that MSMEs are not left behind and can compete in both domestic and global markets.' The program is expected to launch in several pilot provinces before a nationwide rollout.", "category": "Government", "date": "Oct 10, 2024", "url": "https://bpjph.halal.go.id/news/bpjph-kemenkop-ukm-kolaborasi-akselerasi-sertifikasi-halal-umk" },
+        "2": { "title": "Head of BPJPH Outlines 3 Priorities for Global Halal Ecosystem", "summary": "The Head of BPJPH highlighted mutual recognition, digital integration, and capacity building as key priorities for a global halal standard.", "content": "Speaking at the World Halal Summit, the Head of BPJPH, Muhammad Aqil Irham, emphasized three key priorities for establishing a robust global halal ecosystem. The first is creating a framework for Mutual Recognition Agreements (MRA) between halal certification bodies worldwide to reduce trade barriers. The second priority is the development of an integrated digital platform that connects all stakeholders, from producers to consumers, ensuring transparency and traceability. Lastly, he highlighted the importance of enhancing the capacity and competency of halal auditors and supervisors through standardized training and professional development programs.\n\n'A unified and digitally-powered system is no longer an option but a necessity for the future of the global halal industry,' he remarked during his keynote address.", "category": "Government", "date": "Oct 09, 2024", "url": "https://bpjph.halal.go.id/news/kepala-bpjph-paparkan-3-isu-prioritas-wujudkan-ekosistem-halal-dunia" },
+        "3": { "title": "Mandatory Halal Certification is a Legal Mandate, Says BPJPH Head", "summary": "The Head of BPJPH reaffirms that the upcoming mandatory halal certification is a direct implementation of the law to protect consumers.", "content": "With the October 2024 deadline approaching, the Head of BPJPH has issued a firm reminder that mandatory halal certification is a direct mandate of Law No. 33 of 2014. He clarified that this is not a new policy but the implementation phase of a long-standing law designed to provide legal certainty and protection for Muslim consumers in Indonesia. 'We urge all business actors in the food and beverage sector to immediately register their products. This is a collective responsibility to uphold consumer rights,' he stated. The agency is increasing its outreach and educational efforts to ensure all businesses are aware of their obligations and the steps required to achieve certification through the SIHALAL portal.", "category": "Education", "date": "Oct 08, 2024", "url": "https://bpjph.halal.go.id/news/tegas-kepala-bpjph-kewajiban-sertifikasi-halal-adalah-perintah-undang-undang" },
+        "4": { "title": "BPJPH Offers On-the-Spot Certification at Halal World 2024", "summary": "To speed up compliance, BPJPH provided on-the-spot halal certification registration and consultation services during the Halal World 2024 event.", "content": "During the bustling Halal World 2024 exhibition, BPJPH set up a dedicated service booth offering on-the-spot registration for halal certification. This initiative aimed to make the process more accessible and to directly address questions and concerns from business owners. Hundreds of MSME owners took advantage of the service, receiving immediate guidance on document preparation and application submission via the SIHALAL system. 'We want to be proactive and bring the service directly to the people,' said a BPJPH representative. The event also featured short seminars on the importance of halal certification and the benefits of the free SEHATI program for small businesses.", "category": "Event", "date": "Oct 07, 2024", "url": "https://bpjph.halal.go.id/news/bpjph-buka-layanan-sertifikasi-halal-on-the-spot-di-halal-world-2024" }
       }
     }
   },
@@ -338,7 +345,9 @@
     "emailOrAuditorIdLabel": "Email or Auditor ID",
     "emailOrAuditorIdPlaceholder": "e.g., auditor@lph.com or AUD-12345",
     "emailOrOfficerIdLabel": "Email or Officer ID",
-    "emailOrOfficerIdPlaceholder": "e.g., officer@bpjph.go.id or OFF-12345"
+    "emailOrOfficerIdPlaceholder": "e.g., officer@bpjph.go.id or OFF-12345",
+    "loginWithGoogle": "Login with Google",
+    "orDivider": "OR"
   },
   "carousel": {
     "announcement": "Announcement"
@@ -370,6 +379,9 @@
   "newsPage": {
     "title": "BPJPH News & Updates",
     "subtitle": "Stay informed with the latest developments and announcements."
+  },
+  "newsDetail": {
+    "backToNews": "Back to News"
   },
   "promotionModal": {
     "termsTitle": "Terms & Conditions",
@@ -456,7 +468,33 @@
   "regulation": {
     "title": "Halal Regulation",
     "subtitle": "Access official regulations and guidelines for Halal Product Assurance.",
-    "placeholder": "The regulation library feature is coming soon. Stay tuned for updates!"
+    "placeholder": "The regulation library feature is coming soon. Stay tuned for updates!",
+    "backToList": "Back to Regulations",
+    "pdfPlaceholder": "PDF Viewer Placeholder",
+    "categories": {
+      "law": "Law",
+      "gov": "Government Regulation",
+      "ministerial": "Ministerial Decree",
+      "bpjph": "BPJPH Regulation"
+    },
+    "docs": {
+      "1": {
+        "title": "Law No. 33 of 2014",
+        "description": "The primary law concerning Halal Product Assurance, establishing the mandate for halal certification for products in Indonesia."
+      },
+      "2": {
+        "title": "Government Regulation No. 39 of 2021",
+        "description": "Implementing regulation for Law No. 33 of 2014, detailing the stages and procedures of halal product assurance."
+      },
+      "3": {
+        "title": "Minister of Religious Affairs Decree No. 748 of 2021",
+        "description": "Specifies the types of products that are required to be halal certified."
+      },
+      "4": {
+        "title": "BPJPH Head Decree No. 1 of 2021",
+        "description": "Technical guidelines regarding the implementation of Halal Product Assurance services."
+      }
+    }
   },
   "showMore": "Show More",
   "showLess": "Show Less"

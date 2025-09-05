@@ -18,9 +18,11 @@ const Pagination: React.FC<PaginationProps> = ({
 }) => {
   const { t } = useTranslations();
 
-  const tooltipText = totalPages > 0 ? t('certCheck.pagination.pageTooltip')
-    .replace('{currentPage}', String(currentPage))
-    .replace('{totalPages}', String(totalPages)) : '';
+  // FIX: Use new t function with replacements for page tooltip.
+  const tooltipText = totalPages > 0 ? t('certCheck.pagination.pageTooltip', {
+    currentPage,
+    totalPages,
+  }) : '';
 
   const getPageNumbers = () => {
     const pageNumbers: (number | string)[] = [];
@@ -69,10 +71,12 @@ const Pagination: React.FC<PaginationProps> = ({
   return (
     <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-12 pt-8 border-t">
       <p className="text-sm text-gray-600">
-        {t('certCheck.pagination.showingResults')
-          .replace('{start}', String(startResult))
-          .replace('{end}', String(endResult))
-          .replace('{total}', String(totalResults))}
+        {/* FIX: Use new t function with replacements for showing results text. */}
+        {t('certCheck.pagination.showingResults', {
+          start: startResult,
+          end: endResult,
+          total: totalResults,
+        })}
       </p>
       <nav className="flex items-center space-x-1">
         <button

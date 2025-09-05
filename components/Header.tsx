@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useTranslations } from '../hooks/useTranslations';
 import { useAuth } from '../hooks/useAuth';
 import { useBasket } from '../hooks/useBasket';
@@ -43,18 +43,64 @@ const BpjphLogo: React.FC = () => (
       </div>
 );
 
-const UserProfileIcon: React.FC<{onClick: () => void}> = ({onClick}) => {
-    const { user } = useAuth();
+const UserProfileIcon: React.FC<{onNavigate: (page: string) => void}> = ({onNavigate}) => {
+    const { user, persona, logout } = useAuth();
+    const { t } = useTranslations();
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const dropdownRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setIsDropdownOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
+    const handleAction = (action: () => void) => {
+        action();
+        setIsDropdownOpen(false);
+    }
+    
     return (
-        <button onClick={onClick} className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden ring-2 ring-offset-2 ring-transparent hover:ring-halal-green transition-all">
-            {user ? (
-                <span className="font-bold text-halal-green">{user.name.charAt(0)}</span>
-            ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
+        <div className="relative" ref={dropdownRef}>
+            <button 
+                onClick={() => setIsDropdownOpen(prev => !prev)} 
+                className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden ring-2 ring-offset-2 ring-transparent hover:ring-halal-green focus:ring-halal-green transition-all"
+                aria-haspopup="true"
+                aria-expanded={isDropdownOpen}
+            >
+                {user ? (
+                    <span className="font-bold text-halal-green">{user.name.charAt(0)}</span>
+                ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                )}
+            </button>
+            {isDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl z-50 py-1 ring-1 ring-black ring-opacity-5 animate-fadein">
+                    {persona === 'guest' ? (
+                        <button onClick={() => handleAction(logout)} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                            {t('header.profileMenu.loginRegister')}
+                        </button>
+                    ) : (
+                        <>
+                            <button onClick={() => handleAction(() => onNavigate('profile'))} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                {t('header.profileMenu.viewProfile')}
+                            </button>
+                            <button onClick={() => handleAction(logout)} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                {t('header.profileMenu.switchPersona')}
+                            </button>
+                        </>
+                    )}
+                </div>
             )}
-        </button>
+        </div>
     );
 }
 
@@ -136,7 +182,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, onBasketClick, onSearch }) 
           <div className="flex items-center space-x-2 sm:space-x-4">
             <LanguageToggle />
             <BasketIcon onClick={onBasketClick} />
-            <UserProfileIcon onClick={() => onNavigate('profile')}/>
+            <UserProfileIcon onNavigate={onNavigate}/>
           </div>
         </div>
       </header>

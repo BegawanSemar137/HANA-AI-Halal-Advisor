@@ -1,13 +1,19 @@
 {
   "header": {
     "searchPlaceholder": "Cari produk halal, layanan...",
-    "searchLabel": "Cari"
+    "searchLabel": "Cari",
+    "profileMenu": {
+      "viewProfile": "Lihat Profil",
+      "switchPersona": "Ganti Persona",
+      "loginRegister": "Masuk / Daftar"
+    }
   },
   "nav": {
     "home": "Beranda",
     "promotions": "Promosi",
     "news": "Berita",
-    "profile": "Profil"
+    "profile": "Profil",
+    "regulation": "Regulasi"
   },
   "home": {
     "hero": {
@@ -80,6 +86,7 @@
     "news": {
       "title": "Berita & Info BPJPH",
       "loadMore": "Muat Lebih",
+      "clearFilter": "Hapus Filter",
       "categories": {
         "all": "Semua",
         "technology": "Teknologi",
@@ -88,10 +95,10 @@
         "government": "Pemerintah"
       },
       "articles": {
-        "1": { "title": "BPJPH & Kemenkop UKM Kolaborasi Sertifikasi Halal UMKM", "summary": "Kolaborasi baru bertujuan untuk mempercepat sertifikasi halal bagi jutaan produk UMKM, memperkuat ekosistem halal Indonesia.", "category": "Pemerintah", "date": "10 Okt 2024", "url": "https://bpjph.halal.go.id/news/bpjph-kemenkop-ukm-kolaborasi-akselerasi-sertifikasi-halal-umk" },
-        "2": { "title": "Kepala BPJPH Paparkan 3 Isu Prioritas Ekosistem Halal Dunia", "summary": "Kepala BPJPH menyoroti pengakuan bersama, integrasi digital, dan peningkatan kapasitas sebagai isu prioritas utama untuk standar halal global.", "category": "Pemerintah", "date": "09 Okt 2024", "url": "https://bpjph.halal.go.id/news/kepala-bpjph-paparkan-3-isu-prioritas-wujudkan-ekosistem-halal-dunia" },
-        "3": { "title": "Kewajiban Sertifikasi Halal Adalah Perintah Undang-undang, Tegas Kepala BPJPH", "summary": "Kepala BPJPH menegaskan kembali bahwa kewajiban sertifikasi halal yang akan datang adalah implementasi langsung dari undang-undang untuk melindungi konsumen.", "category": "Edukasi", "date": "08 Okt 2024", "url": "https://bpjph.halal.go.id/news/tegas-kepala-bpjph-kewajiban-sertifikasi-halal-adalah-perintah-undang-undang" },
-        "4": { "title": "BPJPH Buka Layanan Sertifikasi Halal 'On The Spot' di Halal World 2024", "summary": "Untuk mempercepat kepatuhan, BPJPH menyediakan layanan pendaftaran dan konsultasi sertifikasi halal di tempat selama acara Halal World 2024.", "category": "Acara", "date": "07 Okt 2024", "url": "https://bpjph.halal.go.id/news/bpjph-buka-layanan-sertifikasi-halal-on-the-spot-di-halal-world-2024" }
+        "1": { "title": "BPJPH & Kemenkop UKM Kolaborasi Sertifikasi Halal UMKM", "summary": "Kolaborasi baru bertujuan untuk mempercepat sertifikasi halal bagi jutaan produk UMKM, memperkuat ekosistem halal Indonesia.", "content": "Badan Penyelenggara Jaminan Produk Halal (BPJPH) dan Kementerian Koperasi dan UKM (Kemenkop UKM) menandatangani nota kesepahaman untuk mempercepat sertifikasi halal bagi UMKM. Kemitraan strategis ini bertujuan untuk mengintegrasikan data dan menyediakan dukungan yang efisien, sehingga memudahkan jutaan usaha kecil untuk mematuhi peraturan wajib halal yang akan datang. Kolaborasi ini akan berfokus pada sosialisasi bersama, pelatihan, dan penyediaan akses ke pembiayaan untuk mengurangi hambatan sertifikasi.\n\nKepala BPJPH, Muhammad Aqil Irham, menyatakan, 'Sinergi ini sangat penting untuk membangun ekosistem halal nasional yang kuat. Dengan bekerja sama, kita dapat memastikan UMKM tidak tertinggal dan dapat bersaing di pasar domestik maupun global.' Program ini diharapkan akan diluncurkan di beberapa provinsi percontohan sebelum diluncurkan secara nasional.", "category": "Pemerintah", "date": "10 Okt 2024", "url": "https://bpjph.halal.go.id/news/bpjph-kemenkop-ukm-kolaborasi-akselerasi-sertifikasi-halal-umk" },
+        "2": { "title": "Kepala BPJPH Paparkan 3 Isu Prioritas Ekosistem Halal Dunia", "summary": "Kepala BPJPH menyoroti pengakuan bersama, integrasi digital, dan peningkatan kapasitas sebagai isu prioritas utama untuk standar halal global.", "content": "Berbicara di World Halal Summit, Kepala BPJPH, Muhammad Aqil Irham, menekankan tiga prioritas utama untuk membangun ekosistem halal global yang kuat. Pertama adalah menciptakan kerangka kerja untuk Perjanjian Saling Pengakuan (MRA) antara lembaga sertifikasi halal di seluruh dunia untuk mengurangi hambatan perdagangan. Prioritas kedua adalah pengembangan platform digital terintegrasi yang menghubungkan semua pemangku kepentingan, dari produsen hingga konsumen, untuk memastikan transparansi dan ketertelusuran. Terakhir, beliau menyoroti pentingnya meningkatkan kapasitas dan kompetensi auditor dan penyelia halal melalui pelatihan standar dan program pengembangan profesional.\n\n'Sistem yang terpadu dan didukung secara digital bukan lagi pilihan, melainkan sebuah keharusan untuk masa depan industri halal global,' ujarnya dalam pidato utamanya.", "category": "Pemerintah", "date": "09 Okt 2024", "url": "https://bpjph.halal.go.id/news/kepala-bpjph-paparkan-3-isu-prioritas-wujudkan-ekosistem-halal-dunia" },
+        "3": { "title": "Kewajiban Sertifikasi Halal Adalah Perintah Undang-undang, Tegas Kepala BPJPH", "summary": "Kepala BPJPH menegaskan kembali bahwa kewajiban sertifikasi halal yang akan datang adalah implementasi langsung dari undang-undang untuk melindungi konsumen.", "content": "Menjelang tenggat waktu Oktober 2024, Kepala BPJPH memberikan pengingat tegas bahwa kewajiban sertifikasi halal adalah amanat langsung dari Undang-Undang No. 33 Tahun 2014. Beliau mengklarifikasi bahwa ini bukan kebijakan baru, melainkan tahap implementasi dari undang-undang yang sudah lama dirancang untuk memberikan kepastian hukum dan perlindungan bagi konsumen Muslim di Indonesia. 'Kami mendesak semua pelaku usaha di sektor makanan dan minuman untuk segera mendaftarkan produk mereka. Ini adalah tanggung jawab kolektif untuk menegakkan hak-hak konsumen,' tegasnya. BPJPH sedang meningkatkan upaya sosialisasi dan edukasi untuk memastikan semua pelaku usaha mengetahui kewajiban mereka dan langkah-langkah yang diperlukan untuk mendapatkan sertifikasi melalui portal SIHALAL.", "category": "Edukasi", "date": "08 Okt 2024", "url": "https://bpjph.halal.go.id/news/tegas-kepala-bpjph-kewajiban-sertifikasi-halal-adalah-perintah-undang-undang" },
+        "4": { "title": "BPJPH Buka Layanan Sertifikasi Halal 'On The Spot' di Halal World 2024", "summary": "Untuk mempercepat kepatuhan, BPJPH menyediakan layanan pendaftaran dan konsultasi sertifikasi halal di tempat selama acara Halal World 2024.", "content": "Selama pameran Halal World 2024 yang ramai, BPJPH membuka gerai layanan khusus yang menawarkan pendaftaran sertifikasi halal di tempat. Inisiatif ini bertujuan untuk membuat prosesnya lebih mudah diakses dan untuk menjawab pertanyaan serta kekhawatiran dari para pemilik usaha secara langsung. Ratusan pemilik UMKM memanfaatkan layanan ini, menerima panduan langsung tentang persiapan dokumen dan pengajuan aplikasi melalui sistem SIHALAL. 'Kami ingin proaktif dan membawa layanan langsung kepada masyarakat,' kata seorang perwakilan BPJPH. Acara ini juga menampilkan seminar singkat tentang pentingnya sertifikasi halal dan manfaat program SEHATI gratis untuk usaha kecil.", "category": "Acara", "date": "07 Okt 2024", "url": "https://bpjph.halal.go.id/news/bpjph-buka-layanan-sertifikasi-halal-on-the-spot-di-halal-world-2024" }
       }
     }
   },
@@ -338,7 +345,9 @@
     "emailOrAuditorIdLabel": "Email atau ID Auditor",
     "emailOrAuditorIdPlaceholder": "cth: auditor@lph.com atau AUD-12345",
     "emailOrOfficerIdLabel": "Email atau ID Petugas",
-    "emailOrOfficerIdPlaceholder": "cth: petugas@bpjph.go.id atau OFF-12345"
+    "emailOrOfficerIdPlaceholder": "cth: petugas@bpjph.go.id atau OFF-12345",
+    "loginWithGoogle": "Masuk dengan Google",
+    "orDivider": "ATAU"
   },
   "carousel": {
     "announcement": "Pengumuman"
@@ -370,6 +379,9 @@
   "newsPage": {
     "title": "Berita & Info BPJPH",
     "subtitle": "Tetap terinformasi dengan perkembangan dan pengumuman terbaru."
+  },
+  "newsDetail": {
+    "backToNews": "Kembali ke Berita"
   },
   "promotionModal": {
     "termsTitle": "Syarat & Ketentuan",
@@ -456,7 +468,33 @@
   "regulation": {
     "title": "Regulasi Halal",
     "subtitle": "Akses peraturan dan pedoman resmi Jaminan Produk Halal.",
-    "placeholder": "Fitur perpustakaan regulasi akan segera hadir. Nantikan pembaruannya!"
+    "placeholder": "Fitur perpustakaan regulasi akan segera hadir. Nantikan pembaruannya!",
+    "backToList": "Kembali ke Daftar Regulasi",
+    "pdfPlaceholder": "Placeholder Penampil PDF",
+    "categories": {
+      "law": "Undang-Undang",
+      "gov": "Peraturan Pemerintah",
+      "ministerial": "Keputusan Menteri",
+      "bpjph": "Peraturan BPJPH"
+    },
+    "docs": {
+      "1": {
+        "title": "UU Nomor 33 Tahun 2014",
+        "description": "Undang-undang utama tentang Jaminan Produk Halal, menetapkan mandat sertifikasi halal untuk produk di Indonesia."
+      },
+      "2": {
+        "title": "Peraturan Pemerintah No. 39 Tahun 2021",
+        "description": "Peraturan pelaksana untuk UU No. 33 Tahun 2014, merinci tahapan dan prosedur jaminan produk halal."
+      },
+      "3": {
+        "title": "Keputusan Menteri Agama No. 748 Tahun 2021",
+        "description": "Menetapkan jenis-jenis produk yang wajib bersertifikat halal."
+      },
+      "4": {
+        "title": "Keputusan Kepala BPJPH No. 1 Tahun 2021",
+        "description": "Petunjuk teknis mengenai pelaksanaan layanan Jaminan Produk Halal."
+      }
+    }
   },
   "showMore": "Tampilkan Lebih Banyak",
   "showLess": "Tampilkan Lebih Sedikit"
