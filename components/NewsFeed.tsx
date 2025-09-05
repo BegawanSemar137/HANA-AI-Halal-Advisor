@@ -23,7 +23,7 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ onNewsSelect }) => {
     setTimeout(() => {
       setActiveCategory(category);
       setIsTransitioning(false);
-    }, 250);
+    }, 300); // Adjusted timing for smoother feel
   };
 
   const filteredArticles = allArticles.filter(article => 
@@ -58,7 +58,7 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ onNewsSelect }) => {
         )}
       </div>
 
-      <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-opacity duration-250 ease-in-out ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+      <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-300 ease-in-out ${isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
         {filteredArticles.map(article => (
           <div
             key={article.id}

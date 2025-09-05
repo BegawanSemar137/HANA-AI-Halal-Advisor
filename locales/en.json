@@ -32,11 +32,31 @@
     "stories": {
       "title": "Inspiration & Lifestyle",
       "items": {
-        "1": { "title": "From Home Kitchen to Global Market", "user": "UMKM 'Rendang Enak'" },
-        "2": { "title": "Halal Travel Guide to Japan", "user": "Lifestyle Blogger" },
-        "3": { "title": "The Science of Halal Gelatin", "user": "Food Technologist" },
-        "4": { "title": "Digitalizing Halal Audits", "user": "LPH 'Amanah'" },
-        "5": { "title": "A Consumer's Halal Journey", "user": "Community Member" }
+        "1": {
+          "title": "From Home Kitchen to Global Market",
+          "user": "UMKM 'Rendang Enak'",
+          "content": "Ibu Siti started 'Rendang Enak' from her small home kitchen with a family recipe passed down through generations. Initially selling to neighbors, she dreamed of sharing her authentic Padang rendang with the world. The journey was challenging, especially navigating the complexities of food safety and certification.\n\nGetting a halal certificate was a turning point. It wasn't just a label; it was a promise of quality and trust to her customers. With the certificate, she gained the confidence to approach larger distributors and even participate in international food expos. Today, 'Rendang Enak' is exported to three countries, a testament to how halal certification can open doors for small businesses to achieve their global ambitions."
+        },
+        "2": {
+          "title": "Halal Travel Guide to Japan",
+          "user": "Lifestyle Blogger",
+          "content": "Exploring Japan as a Muslim traveler can be an incredible experience, but it requires some planning. While awareness of halal is growing, finding certified food options can still be a challenge outside major cities. My first tip is to use apps like 'Halal Navi' or 'Japan Halal TV' to locate mosques and halal-friendly restaurants.\n\nDon't be afraid to ask! Learning a few key Japanese phrases like 'Watashi wa butaniku o taberaremasen' (I cannot eat pork) can be very helpful. Many restaurants, especially in tourist areas, are becoming more accommodating. I also recommend visiting convenience stores for snacks; look for products with clear ingredient lists and avoid those with gelatin (ゼラチン) or shortening (ショートニング) unless specified as plant-based. Japan's beauty and culture are worth the extra effort, and with careful planning, you can enjoy a worry-free and delicious halal journey."
+        },
+        "3": {
+          "title": "The Science of Halal Gelatin",
+          "user": "Food Technologist",
+          "content": "Gelatin is one of the most critical ingredients in halal food production. It's a gelling agent derived from collagen, typically sourced from animal skin and bones. The 'syubhat' (doubtful) status arises because the source animal must be halal, and if it's a cow, it must be slaughtered according to Islamic rites. Pork-derived gelatin is strictly haram.\n\nAs a food technologist, my work involves verifying the source of gelatin. We use advanced techniques like Polymerase Chain Reaction (PCR) to test for porcine DNA. Furthermore, we work with suppliers who provide gelatin from certified halal bovine sources. The good news for consumers is that alternatives are becoming more common. Fish-based gelatin, as well as plant-based gelling agents like agar-agar, pectin, and carrageenan, are excellent halal-friendly substitutes used in many modern food products."
+        },
+        "4": {
+          "title": "Digitalizing Halal Audits",
+          "user": "LPH 'Amanah'",
+          "content": "As a Halal Inspection Agency (LPH), our role is to ensure that the entire production process meets stringent halal standards. Traditionally, this involved a lot of paperwork and manual tracking, which was time-consuming and prone to errors. The shift to digital platforms like SIHALAL has revolutionized our work.\n\nNow, we can manage our audit schedules, review documentation, and submit reports all within a single integrated system. This digital trail increases transparency and accountability for everyone involved—the business, the LPH, and BPJPH. It allows us to conduct audits more efficiently, which means businesses can get their certificates faster. Technology is a powerful tool in upholding the integrity of the halal process, and we are proud to be at the forefront of this digital transformation."
+        },
+        "5": {
+          "title": "A Consumer's Halal Journey",
+          "user": "Community Member",
+          "content": "For me, choosing halal isn't just about avoiding certain ingredients; it's a core part of my identity and a way of life. It’s about being mindful of what I consume and ensuring it's pure and permissible. In the past, this meant spending hours in the supermarket, painstakingly reading tiny ingredient labels and often feeling uncertain.\n\nThe rise of clear halal labeling and tools like this AI Halal Advisor app has been empowering. Being able to quickly scan a barcode or check a certificate number gives me peace of mind. It allows me to support businesses that are committed to transparency and to make confident choices for my family. This accessibility to information has made my halal journey simpler and more joyful."
+        }
       }
     },
     "services": {
@@ -362,7 +382,13 @@
     "category": "Category",
     "certificationStatus": "Certification Status",
     "clearAll": "Clear All",
-    "searchButton": "Search"
+    "searchButton": "Search",
+    "suggestions": {
+      "title": "Popular Searches",
+      "1": "halal food near me",
+      "2": "halal certification process",
+      "3": "product verification"
+    }
   },
   "profilePage": {
     "notifications": {
@@ -381,7 +407,12 @@
     "subtitle": "Stay informed with the latest developments and announcements."
   },
   "newsDetail": {
-    "backToNews": "Back to News"
+    "backToNews": "Back to News",
+    "shareArticle": "Share Article",
+    "copySuccess": "Link copied!"
+  },
+  "storyDetail": {
+    "backToHome": "Back to Home"
   },
   "promotionModal": {
     "termsTitle": "Terms & Conditions",
@@ -497,5 +528,10 @@
     }
   },
   "showMore": "Show More",
-  "showLess": "Show Less"
+  "showLess": "Show Less",
+  "mapPage": {
+    "title": "Location Search",
+    "subtitle": "Showing results for: \"{query}\"",
+    "mapTitle": "Map showing results for {query}"
+  }
 }

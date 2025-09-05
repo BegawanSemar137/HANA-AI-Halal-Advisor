@@ -30,18 +30,24 @@ import { useProducts } from './hooks/useProducts';
 import RegulationPage from './components/RegulationPage';
 import NewsDetailPage from './components/NewsDetailPage';
 import { useNews } from './hooks/useNews';
+import StoryDetailPage from './components/StoryDetailPage';
+import { useStories } from './hooks/useStories';
+import MapPage from './components/MapPage';
 
 
 const App: React.FC = () => {
   const [isHanaChatOpen, setIsHanaChatOpen] = useState(false);
   const [isBasketOpen, setIsBasketOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState('home');
+  const [mapSearchQuery, setMapSearchQuery] = useState('');
   const [selectedProductId, setSelectedProductId] = useState<number | null>(null);
   const [selectedNewsId, setSelectedNewsId] = useState<number | null>(null);
+  const [selectedStoryId, setSelectedStoryId] = useState<number | null>(null);
   const { persona, isAuthenticated, selectPersona, logout } = useAuth();
   const { t } = useTranslations();
   const { products } = useProducts();
   const { news } = useNews();
+  const { stories } = useStories();
   
   const handleLogout = () => {
     logout();
@@ -54,8 +60,9 @@ const App: React.FC = () => {
       return;
     }
     window.scrollTo(0, 0);
-    setSelectedProductId(null); // Clear selected product when navigating to a new page
+    setSelectedProductId(null);
     setSelectedNewsId(null);
+    setSelectedStoryId(null);
     setCurrentPage(page);
   };
   
@@ -70,6 +77,12 @@ const App: React.FC = () => {
     setCurrentPage('news-detail');
     window.scrollTo(0, 0);
   };
+  
+  const handleStorySelect = (id: number) => {
+    setSelectedStoryId(id);
+    setCurrentPage('story-detail');
+    window.scrollTo(0, 0);
+  };
 
   const handleBackToMarketplace = () => {
     setSelectedProductId(null);
@@ -82,8 +95,18 @@ const App: React.FC = () => {
     navigateTo('news');
   };
 
-  const handleGlobalSearch = (scope: 'products' | 'certificates') => {
-      if (scope === 'products') {
+  const handleBackToHome = () => {
+    setSelectedStoryId(null);
+    navigateTo('home');
+  };
+
+  const handleGlobalSearch = (scope: 'products' | 'certificates' | 'map', query: string) => {
+      // The query is set to the context in GlobalSearch component,
+      // so MarketplacePage and CertificationCheckPage can use it.
+      if (scope === 'map') {
+          setMapSearchQuery(query);
+          navigateTo('map');
+      } else if (scope === 'products') {
           navigateTo('marketplace');
       } else if (scope === 'certificates') {
           navigateTo('cert-check');
@@ -121,12 +144,14 @@ const App: React.FC = () => {
     'product-detail',
     'news',
     'news-detail',
+    'story-detail',
     'promotions',
     'profile',
     'supplier-verification',
     'scan-barcode',
     'more',
     'regulation',
+    'map',
   ];
 
   const isHomePage = !pagesWithGrayBg.includes(currentPage);
@@ -138,7 +163,7 @@ const App: React.FC = () => {
         return (
           <>
             <Hero />
-            <MainCarousel />
+            <MainCarousel onStorySelect={handleStorySelect} />
             <ServicesMenu onNavigate={navigateTo} />
             <Promotions />
             <NewsFeed onNewsSelect={handleNewsSelect}/>
@@ -164,6 +189,19 @@ const App: React.FC = () => {
         return selectedNews 
           ? <NewsDetailPage article={selectedNews} onBack={handleBackToNews} /> 
           : <NewsPage onNewsSelect={handleNewsSelect} />; // Fallback
+      case 'story-detail':
+        const selectedStory = stories.find(s => s.id === selectedStoryId);
+        return selectedStory
+          ? <StoryDetailPage story={selectedStory} onBack={handleBackToHome} />
+          : ( // Fallback to home if story not found
+              <>
+                <Hero />
+                <MainCarousel onStorySelect={handleStorySelect} />
+                <ServicesMenu onNavigate={navigateTo} />
+                <Promotions />
+                <NewsFeed onNewsSelect={handleNewsSelect}/>
+              </>
+          );
       case 'promotions':
         return <PromotionsPage />;
       case 'profile':
@@ -174,13 +212,15 @@ const App: React.FC = () => {
         return <ScanBarcodePage />;
       case 'more':
         return <MoreServicesPage onNavigate={navigateTo} />;
+      case 'map':
+        return <MapPage query={mapSearchQuery} />;
       case 'regulation':
         return <RegulationPage />;
       default:
         return (
              <>
                 <Hero />
-                <MainCarousel />
+                <MainCarousel onStorySelect={handleStorySelect} />
                 <ServicesMenu onNavigate={navigateTo} />
                 <NewsFeed onNewsSelect={handleNewsSelect} />
             </>

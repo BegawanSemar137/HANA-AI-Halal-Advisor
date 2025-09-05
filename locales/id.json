@@ -32,11 +32,31 @@
     "stories": {
       "title": "Inspirasi & Gaya Hidup",
       "items": {
-        "1": { "title": "Dari Dapur Rumahan ke Pasar Global", "user": "UMKM 'Rendang Enak'" },
-        "2": { "title": "Panduan Wisata Halal ke Jepang", "user": "Blogger Gaya Hidup" },
-        "3": { "title": "Sains di Balik Gelatin Halal", "user": "Teknolog Pangan" },
-        "4": { "title": "Digitalisasi Audit Halal", "user": "LPH 'Amanah'" },
-        "5": { "title": "Perjalanan Halal Seorang Konsumen", "user": "Anggota Komunitas" }
+        "1": {
+          "title": "Dari Dapur Rumahan ke Pasar Global",
+          "user": "UMKM 'Rendang Enak'",
+          "content": "Ibu Siti memulai 'Rendang Enak' dari dapur rumahnya yang sederhana dengan resep keluarga turun-temurun. Awalnya hanya menjual kepada tetangga, ia bermimpi untuk berbagi rendang Padang otentiknya dengan dunia. Perjalanannya penuh tantangan, terutama dalam menavigasi kompleksitas keamanan pangan dan sertifikasi.\n\nMemperoleh sertifikat halal menjadi titik balik. Itu bukan sekadar label; itu adalah janji kualitas dan kepercayaan kepada pelanggannya. Dengan sertifikat tersebut, ia menjadi percaya diri untuk mendekati distributor yang lebih besar dan bahkan berpartisipasi dalam pameran makanan internasional. Kini, 'Rendang Enak' diekspor ke tiga negara, sebuah bukti bagaimana sertifikasi halal dapat membuka pintu bagi usaha kecil untuk mencapai ambisi global mereka."
+        },
+        "2": {
+          "title": "Panduan Wisata Halal ke Jepang",
+          "user": "Blogger Gaya Hidup",
+          "content": "Menjelajahi Jepang sebagai wisatawan Muslim bisa menjadi pengalaman yang luar biasa, tetapi membutuhkan perencanaan. Meskipun kesadaran akan halal semakin meningkat, menemukan pilihan makanan bersertifikat masih bisa menjadi tantangan di luar kota-kota besar. Tips pertama saya adalah menggunakan aplikasi seperti 'Halal Navi' atau 'Japan Halal TV' untuk menemukan masjid dan restoran ramah halal.\n\nJangan takut untuk bertanya! Mempelajari beberapa frasa kunci dalam bahasa Jepang seperti 'Watashi wa butaniku o taberaremasen' (Saya tidak bisa makan babi) bisa sangat membantu. Banyak restoran, terutama di daerah wisata, menjadi lebih akomodatif. Saya juga merekomendasikan mengunjungi toko serba ada untuk makanan ringan; cari produk dengan daftar bahan yang jelas dan hindari yang mengandung gelatin (ゼラチン) atau shortening (ショートニング) kecuali dinyatakan berbasis nabati. Keindahan dan budaya Jepang sepadan dengan usaha ekstra, dan dengan perencanaan yang cermat, Anda dapat menikmati perjalanan halal yang lezat dan tanpa khawatir."
+        },
+        "3": {
+          "title": "Sains di Balik Gelatin Halal",
+          "user": "Teknolog Pangan",
+          "content": "Gelatin adalah salah satu bahan paling kritis dalam produksi makanan halal. Ini adalah zat pembentuk gel yang berasal dari kolagen, biasanya bersumber dari kulit dan tulang hewan. Status 'syubhat' (meragukan) muncul karena hewan sumbernya harus halal, dan jika itu sapi, harus disembelih sesuai syariat Islam. Gelatin yang berasal dari babi adalah haram secara mutlak.\n\nSebagai teknolog pangan, pekerjaan saya meliputi verifikasi sumber gelatin. Kami menggunakan teknik canggih seperti Polymerase Chain Reaction (PCR) untuk menguji DNA babi. Selain itu, kami bekerja dengan pemasok yang menyediakan gelatin dari sumber sapi halal bersertifikat. Kabar baiknya bagi konsumen adalah alternatif semakin umum. Gelatin berbasis ikan, serta zat pembentuk gel nabati seperti agar-agar, pektin, dan karagenan, adalah pengganti ramah halal yang sangat baik yang digunakan di banyak produk makanan modern."
+        },
+        "4": {
+          "title": "Digitalisasi Audit Halal",
+          "user": "LPH 'Amanah'",
+          "content": "Sebagai Lembaga Pemeriksa Halal (LPH), peran kami adalah memastikan seluruh proses produksi memenuhi standar halal yang ketat. Secara tradisional, ini melibatkan banyak dokumen dan pelacakan manual, yang memakan waktu dan rentan terhadap kesalahan. Peralihan ke platform digital seperti SIHALAL telah merevolusi pekerjaan kami.\n\nKini, kami dapat mengelola jadwal audit, meninjau dokumentasi, dan mengirimkan laporan dalam satu sistem terintegrasi. Jejak digital ini meningkatkan transparansi dan akuntabilitas bagi semua pihak yang terlibat—pelaku usaha, LPH, dan BPJPH. Ini memungkinkan kami melakukan audit dengan lebih efisien, yang berarti pelaku usaha bisa mendapatkan sertifikat mereka lebih cepat. Teknologi adalah alat yang kuat dalam menegakkan integritas proses halal, dan kami bangga menjadi yang terdepan dalam transformasi digital ini."
+        },
+        "5": {
+          "title": "Perjalanan Halal Seorang Konsumen",
+          "user": "Anggota Komunitas",
+          "content": "Bagi saya, memilih yang halal bukan hanya tentang menghindari bahan-bahan tertentu; ini adalah bagian inti dari identitas saya dan cara hidup. Ini tentang kesadaran akan apa yang saya konsumsi dan memastikan itu suci dan diizinkan. Dulu, ini berarti menghabiskan berjam-jam di supermarket, dengan susah payah membaca label bahan yang kecil dan sering merasa tidak pasti.\n\nMaraknya pelabelan halal yang jelas dan alat-alat seperti aplikasi AI Halal Advisor ini sangat memberdayakan. Kemampuan untuk memindai barcode dengan cepat atau memeriksa nomor sertifikat memberi saya ketenangan pikiran. Ini memungkinkan saya untuk mendukung bisnis yang berkomitmen pada transparansi dan membuat pilihan yang percaya diri untuk keluarga saya. Aksesibilitas informasi ini telah membuat perjalanan halal saya lebih sederhana dan menyenangkan."
+        }
       }
     },
     "services": {
@@ -362,7 +382,13 @@
     "category": "Kategori",
     "certificationStatus": "Status Sertifikasi",
     "clearAll": "Hapus Semua",
-    "searchButton": "Cari"
+    "searchButton": "Cari",
+    "suggestions": {
+      "title": "Pencarian Populer",
+      "1": "makanan halal di dekat saya",
+      "2": "proses sertifikasi halal",
+      "3": "verifikasi produk"
+    }
   },
   "profilePage": {
     "notifications": {
@@ -381,7 +407,12 @@
     "subtitle": "Tetap terinformasi dengan perkembangan dan pengumuman terbaru."
   },
   "newsDetail": {
-    "backToNews": "Kembali ke Berita"
+    "backToNews": "Kembali ke Berita",
+    "shareArticle": "Bagikan Artikel",
+    "copySuccess": "Tautan disalin!"
+  },
+  "storyDetail": {
+    "backToHome": "Kembali ke Beranda"
   },
   "promotionModal": {
     "termsTitle": "Syarat & Ketentuan",
@@ -497,5 +528,10 @@
     }
   },
   "showMore": "Tampilkan Lebih Banyak",
-  "showLess": "Tampilkan Lebih Sedikit"
+  "showLess": "Tampilkan Lebih Sedikit",
+  "mapPage": {
+    "title": "Pencarian Lokasi",
+    "subtitle": "Menampilkan hasil untuk: \"{query}\"",
+    "mapTitle": "Peta menampilkan hasil untuk {query}"
+  }
 }

@@ -150,7 +150,7 @@ const LanguageToggle: React.FC = () => {
 interface HeaderProps {
     onNavigate: (page: string) => void;
     onBasketClick: () => void;
-    onSearch: (scope: 'products' | 'certificates') => void;
+    onSearch: (scope: 'products' | 'certificates' | 'map', query: string) => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ onNavigate, onBasketClick, onSearch }) => {

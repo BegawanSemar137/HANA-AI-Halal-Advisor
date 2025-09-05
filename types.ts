@@ -16,6 +16,14 @@ export interface NewsArticle {
   url?: string; // The original external URL (optional now)
 }
 
+export interface Story {
+  id: number;
+  title: string;
+  user: string;
+  content: string;
+  imageUrl: string;
+}
+
 export interface Persona {
     id: string;
     name: string; // Translation key

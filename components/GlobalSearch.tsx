@@ -8,7 +8,7 @@ import PriceRangeSlider from './PriceRangeSlider';
 interface GlobalSearchProps {
   isOpen: boolean;
   onClose: () => void;
-  onSearch: (scope: 'products' | 'certificates') => void;
+  onSearch: (scope: 'products' | 'certificates' | 'map', query: string) => void;
 }
 
 const productCategories = ['all', 'food', 'cosmetics', 'fashion', 'pharmaceuticals'];
@@ -26,6 +26,8 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, onSearch }
     } = useSearch();
 
     const [localQuery, setLocalQuery] = useState('');
+    const debouncedQuery = useDebounce(localQuery, 300);
+    const [filteredSuggestions, setFilteredSuggestions] = useState<string[]>([]);
     const [localFilters, setLocalFilters] = useState<{
         category?: string;
         minPrice?: number;
@@ -33,8 +35,24 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, onSearch }
         certStatus?: string;
     }>({});
 
-    const debouncedQuery = useDebounce(localQuery, 300);
+    const allSuggestions = useMemo(() => [
+        t('search.suggestions.1'),
+        t('search.suggestions.2'),
+        t('search.suggestions.3'),
+    ], [t]);
 
+    useEffect(() => {
+        if (debouncedQuery.trim()) {
+            const lowercasedQuery = debouncedQuery.toLowerCase();
+            const matchingSuggestions = allSuggestions.filter(s => 
+                s.toLowerCase().includes(lowercasedQuery)
+            );
+            setFilteredSuggestions(matchingSuggestions);
+        } else {
+            setFilteredSuggestions([]);
+        }
+    }, [debouncedQuery, allSuggestions]);
+    
     const { minPrice, maxPrice } = useMemo(() => {
         if (allProducts.length === 0) return { minPrice: 0, maxPrice: 100 };
         const prices = allProducts.map(p => p.price);
@@ -44,22 +62,45 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, onSearch }
         };
     }, [allProducts]);
     
-    // Set initial price range for the slider
     useEffect(() => {
         setLocalFilters(prev => ({ ...prev, minPrice, maxPrice }));
     }, [minPrice, maxPrice]);
 
-    const handleSearch = () => {
-        setGlobalQuery(debouncedQuery);
+    const performSearch = (query: string) => {
+        if (!query.trim()) return;
+
+        setGlobalQuery(query);
         setGlobalFilters(localFilters);
         triggerGlobalSearch();
-        
-        const effectiveScope = searchScope === 'all' 
-            ? (debouncedQuery.toLowerCase().includes('cert') ? 'certificates' : 'products')
-            : searchScope;
 
-        onSearch(effectiveScope as 'products' | 'certificates');
+        const lowerQuery = query.toLowerCase();
+        const mapKeywords = [
+            'near me', 'nearby', 'restaurant', 'food', 'mosque', 'masjid', 'shop', 
+            'store', 'market', 'cafe', 'bakery', 'butcher', 'find', 'where is', 
+            'location of', 'address of', 'di dekat saya', 'restoran', 'makanan', 
+            'masjid', 'toko', 'pasar', 'kafe', 'roti', 'daging', 'cari', 'dimana',
+            'بالقرب مني', 'مطعم', 'طعام', 'مسجد', 'متجر', 'سوق', 'مقهى', 'مخبز', 'جزار', 'ابحث'
+        ];
+        const isMapQuery = mapKeywords.some(keyword => lowerQuery.includes(keyword));
+
+        if (isMapQuery) {
+            onSearch('map', query);
+        } else {
+            const effectiveScope = searchScope === 'all' 
+                ? (lowerQuery.includes('cert') ? 'certificates' : 'products')
+                : searchScope;
+            onSearch(effectiveScope as 'products' | 'certificates', query);
+        }
         onClose();
+    };
+
+    const handleSearch = () => {
+        performSearch(localQuery);
+    };
+
+    const handleSuggestionClick = (suggestion: string) => {
+        setLocalQuery(suggestion);
+        performSearch(suggestion);
     };
 
     const handleClear = () => {
@@ -95,10 +136,27 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, onSearch }
                          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                         </div>
+                        {/* Suggestions dropdown */}
+                        {filteredSuggestions.length > 0 && (
+                            <div className="absolute top-full mt-2 w-full bg-white rounded-lg shadow-lg border z-10 animate-fadein">
+                                <ul className="py-1 max-h-40 overflow-y-auto">
+                                    {filteredSuggestions.map((suggestion, index) => (
+                                        <li key={index}>
+                                            <button 
+                                                onClick={() => handleSuggestionClick(suggestion)}
+                                                className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
+                                            >
+                                                {suggestion}
+                                            </button>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
                     </div>
                 </div>
 
-                <div className="p-6">
+                <div className="p-6 max-h-[50vh] overflow-y-auto">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {/* Left Column: Scopes */}
                         <div className="md:border-r pr-6">
@@ -166,6 +224,22 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, onSearch }
                              </div>
                         </div>
                     </div>
+                     {localQuery.trim() === '' && (
+                         <div className="mt-6 pt-6 border-t">
+                            <h3 className="font-semibold text-gray-700 mb-3">{t('search.suggestions.title')}</h3>
+                            <div className="flex flex-wrap gap-2">
+                            {allSuggestions.map((suggestion, index) => (
+                                <button
+                                key={index}
+                                onClick={() => handleSuggestionClick(suggestion)}
+                                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-halal-green hover:text-white transition-colors"
+                                >
+                                {suggestion}
+                                </button>
+                            ))}
+                            </div>
+                        </div>
+                     )}
                 </div>
 
                 <div className="p-4 bg-gray-50 rounded-b-2xl flex justify-between items-center">
